@@ -12,18 +12,13 @@ void enter_note(int* lines, char* (**notebook_pointer) ){
     //reallocate memory 
     (*lines) ++;                                                                     //increase lines by 1
     *notebook_pointer = realloc(*notebook_pointer, (*lines) * sizeof(char*));
-
-
-    printf("lines= %d \n", (*lines));
-
     notebook_pointer[(*lines) -1] = malloc(SIZE_NOTE * sizeof(char));               //malloc because it´s the first initialisation
 
-    printf("Size notebook = %d * %ld: %ld \n", (*lines), sizeof(char*), (*lines) * sizeof(char*));
 
-    //printf("After Pointer %p\n", *notebook_pointer[(*lines)-1]);                    
-   
+    printf("Size notebook = %d * %ld: %ld \n", (*lines), sizeof(char*), (*lines) * sizeof(char*));
     //TODO: third line returns segmentation fault ----- *notebook_pointer[(*lines)-1] = malloc(SIZE_NOTE * sizeof(char));
              
+
     //read new line
     char note[SIZE_NOTE];
     printf("Enter a new note:");
