@@ -12,13 +12,8 @@ void enter_note(int* lines, char* (**notebook_pointer) ){
     (*notebook_pointer)[(*lines) -1] = malloc(SIZE_NOTE * sizeof(char));               
 
     //read new line
-    char note[SIZE_NOTE];
     printf("Enter a new note:");
-    fgets(note, SIZE_NOTE, stdin);
-
-    //add line to notebook at position lines (last empty line)
-    strcpy( (*notebook_pointer)[*lines -1], note );
-
+    fgets( (*notebook_pointer)[*lines -1], SIZE_NOTE, stdin);
 }
 
 
